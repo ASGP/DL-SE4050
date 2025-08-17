@@ -1,0 +1,42 @@
+FOR exercise 2 - NN_sample.ipynb
+Accuracy for 1 hidden units: 67.50%
+Accuracy for 2 hidden units: 67.25%
+Accuracy for 3 hidden units: 90.75%
+Accuracy for 4 hidden units: 90.50%
+Accuracy for 5 hidden units: 91.25%
+Accuracy for 20 hidden units: 90.00%
+Accuracy for 50 hidden units: 90.75%
+
+When nodes increase accuracy increases
+and with increaseing nodes model will overfit so in middle it is best we can see 5 gives best 
+
+
+FOR exercise 3 - MLP_with_MNIST_dataset.ipynb
+model = Sequential()
+model.add(Flatten(input_shape=(28, 28)))
+model.add(Dense(128, activation='relu'))
+model.add(Dense(64, activation='relu'))
+model.add(Dense(32, activation='relu'))
+model.add(Dense(10, activation='softmax'))
+
+# 6. Compile the model with correct loss
+model.compile(loss='categorical_crossentropy',
+              optimizer='adam',
+              metrics=['accuracy'])
+
+RESULTS
+
+┃ Layer (type)                    ┃ Output Shape           ┃       Param # ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━┩
+│ flatten_7 (Flatten)             │ (None, 784)            │             0 │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ dense_28 (Dense)                │ (None, 128)            │       100,480 │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ dense_29 (Dense)                │ (None, 64)             │         8,256 │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ dense_30 (Dense)                │ (None, 32)             │         2,080 │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ dense_31 (Dense)                │ (None, 10)             │           330 │
+└─────────────────────────────────┴────────────────────────┴───────────────┘
+
+
